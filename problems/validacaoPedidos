@@ -1,0 +1,23 @@
+const pedidos = [
+  { id: 1, status: 'pago', itens: [10, 20] }, 
+  { id: 2, status: 'cancelado', itens: [100] }, 
+  { id: 3, status: 'pago', itens: [] },             
+  { id: 4, status: 'pendente', itens: [50, 50] },   
+  { id: 5, status: 'pago', itens: [5, 15, 10] }     
+];
+
+const validarPedidos = pedidos => {
+    const pedidosPagosValidos = pedidos.filter(pedido => 
+        pedido.status === 'pago' && pedido.itens.length > 0
+    );
+
+    const receitaTotal = pedidosPagosValidos
+        .map(pedido => pedido.itens.reduce((acc, item) => acc + item, 0))
+        .map(valor => valor * 0.90) // Ex: 30 * 0.90 = 27
+        .reduce((acc, valorLiquido) => acc + valorLiquido, 0);
+        
+    return receitaTotal;
+};
+
+
+console.log(validarPedidos(pedidos)); // Saída: 54
