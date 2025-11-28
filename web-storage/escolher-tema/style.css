@@ -1,0 +1,34 @@
+.preto {
+    background-color: black;
+}
+
+.branco {
+    background-color: white;
+}
+
+#controle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    border: 0.25rem black solid;
+    border-radius: 0.25rem;
+}
+
+#btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#tema-branco-btn {
+    background-color: white;
+    padding: 0.5rem 1rem;
+}
+
+#tema-preto-btn {
+    background-color: black;
+    padding: 0.5rem 1rem;
+}
