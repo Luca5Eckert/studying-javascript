@@ -1,4 +1,4 @@
-const bankAccount = function() {
+const bankAccount = (function() {
     let balance = 0;
 
     function changeBalance(amount){
@@ -30,7 +30,7 @@ const bankAccount = function() {
         getBalance: getBalance
     }
 
-}();
+})();
 
 bankAccount.deposit(100);
 console.log(bankAccount.balance);
