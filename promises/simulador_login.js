@@ -5,8 +5,8 @@ const PASSWORD = "Lucas#113";
 const verificarLogin = ((name, password) => {
     return new Promise((resolver, reject) => {
         const sucesso = name == USERNAME && password == PASSWORD;
-        
-        if(sucesso) resolver("Usuário logado com sucesso");
+
+        if (sucesso) resolver("Usuário logado com sucesso");
 
         reject("Credencias invalidas");
     });
@@ -19,7 +19,7 @@ const realizarLogin = async usuario => {
         .catch(erro => console.log(erro));
 };
 
-function Usuario(name, password){
+function Usuario(name, password) {
     this.name = name;
     this.password = password;
 }
