@@ -16,15 +16,19 @@ const customFetch = async (path) => {
     }
 }
 
-const fetchPosts = () => {
-    customFetch("posts")
-        .then(posts => {
-            console.log(`Posts: ${JSON.stringify(posts)}`);
+const fetchCommentsByPost = (postId) => {
+    customFetch(`posts/${postId}/comments`)
+        .then(comments => {
+            const commentsDolar = comments.filter(comment => {
+                return comment.body == "Dolor";
+            })
+            console.log(`comments: ${JSON.stringify(commentsDolar)}`);
+
         }).catch(error => {
             console.log(error);
         });
 
 }
 
-fetchRooms();
+fetchCommentsByPost(1);
 
